@@ -27,3 +27,11 @@ console.dir(packages);
   ...
   }
 ```
+
+If the .meteor/versions file does not exist (such as when running `meteor test-packages`), the exported object will instead look like
+
+```js
+{
+  __errorRetrievingVersions: true
+}
+```

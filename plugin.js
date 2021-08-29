@@ -71,9 +71,16 @@ PackageVersionCompiler.prototype.processFilesForTarget = function (files) {
   var result = `module.exports = ${JSON.stringify(versions)}`;
 
   files.forEach((file) => {
+    let secondFilePath = file.getPathInPackage() + '.second-file.js';
+
     file.addJavaScript({
-      data: result,
-      path: file.getPathInPackage()
+      path: secondFilePath,
+      data: `console.log("Running ${secondFilePath}")`
+    });
+
+    file.addJavaScript({
+      path: file.getPathInPackage(),
+      data: `require("${secondFilePath}");\n` + result,
     });
   });
 }

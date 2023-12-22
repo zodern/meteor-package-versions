@@ -1,6 +1,6 @@
 Package.describe({
   summary: 'Build plugin to provide list of packages and their versions used by the app',
-  version: '0.2.1',
+  version: '0.2.2',
   name: 'zodern:meteor-package-versions',
   git: 'https://github.com/zodern/meteor-package-versions.git'
 });
